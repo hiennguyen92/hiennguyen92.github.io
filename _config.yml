@@ -1,35 +1,112 @@
-title: Hello, world! I'm David Freeman
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ':title/'
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://hiennguyen92.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl:
+url: https://hiennguyen92.github.io
+date_format: "ordinal"
+title: Home
+subtitle: "Try try again"
+description: "Hien Nguyen's personal blog"
+keywords: Hien Nguyen, hiennguyen92, hiennv
+timezone: Asia/Ho_chi_minh
+encoding: "utf-8"
+side_bar_repo_limit: 5
 
-# Author Settings
-author: David Freeman # add your name
-author-img: david-freeman.jpg # add your photo
-about-author: I am a web developer focusing on front-end development. Always hungry to keep learning. # add description
-twitter: # add your Twitter handle
-facebook: # add your Facebook handle
-github: artemsheludko # add your Github handle
-linkedin: # add your Linkedin handle
-email: # add your Email address
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: Zhuang Ma
+organization: upket.com
+organization_url: http://upket.com
+github_username: hiennguyen92
+location: Ho Chi Minh, Viet Nam
+email: hiennguyen92@gmail.com
 
-# Disqus
-discus-identifier: mr-brown # add your discus identifier
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: Home
 
-# Tracker
-analytics: # Google Analytics
+  -
+    href: /categories/
+    label: Categories
 
-# Build Settings
+  -
+    href: /wiki/
+    label: Wiki
+
+  -
+    href: /links/
+    label: Links
+
+  -
+    href: /about/
+    label: About
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Jekyll      #
+# ---------------- #
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-
+kramdown:
+    input: GFM
+highlighter: rouge
 paginate: 8
-paginate_path: "/page/:num"
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+gems:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+#     - jekyll-mentions
+collections:
+    wiki:
+        output: true
+        permalink: /wiki/:path/
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+repository: hiennguyen92/hiennguyen92.github.io
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://disqus.com
+disqus:
+    username: 
+# https://imsun.net/posts/gitment-introduction/
+gitment:
+    owner: mzlogin
+    repo: blog-comments
+    oauth:
+        client_id: 620844dd41c076d96aa7
+        client_secret: d7992e44b1cdee2001b89e4bb55d0bccf9f2b2af
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: mzlogin
+    repo: blog-comments
+    clientID: d2e1cbbd298958076462
+    clientSecret: d7992e44b1cdee2001b89e4bb55d0bccf9f2b2af
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : false
+
+# ---------------- #
+#    Analytics     #
+# ---------------- #
+google:
+    analytics_id: UA-87733915-1
