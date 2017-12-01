@@ -1,20 +1,20 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: My about
+keywords: Hien Nguyen, hiennguyen92, hiennv
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+I’m a Software Developer with a strong background developing mobile.
 
-仰慕「优雅编码的艺术」。
+Interested in a challenging technical track career in an application development environment. 
 
-坚信熟能生巧，努力改变人生。
+I firmly believe that practice can make a difference, and strive to change life.
 
-## 联系
+## Contact
 
 {% for website in site.data.social %}
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
