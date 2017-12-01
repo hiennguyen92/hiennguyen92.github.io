@@ -4,7 +4,7 @@
 baseurl:
 url: https://hiennguyen92.github.io
 date_format: "ordinal"
-title: Home
+title: Hiennguyen92
 subtitle: "Try try again"
 description: "Hien Nguyen's personal blog"
 keywords: Hien Nguyen, hiennguyen92, hiennv
@@ -15,7 +15,7 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: Hien Nguyen
 organization: upket.com
 organization_url: http://upket.com
 github_username: hiennguyen92
