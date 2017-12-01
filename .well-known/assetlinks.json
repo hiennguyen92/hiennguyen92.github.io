@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.beesightsoft.indexlink",
+    "sha256_cert_fingerprints":
+    ["76:DF:AA:6D:2D:4A:7A:92:D6:F8:42:ED:DA:A0:3F:39:C2:03:0E:5D:23:29:89:1B:E6:A0:27:57:B2:26:48:75"]
+  }
+}]
