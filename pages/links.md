@@ -8,7 +8,7 @@ menu: 链接
 permalink: /links/
 ---
 
-> Friends
+> Friend list
 
 {% for link in site.data.links %}
 * [{{ link.name }}]({{ link.url }})
