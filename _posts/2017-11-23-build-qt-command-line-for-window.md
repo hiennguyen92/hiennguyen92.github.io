@@ -35,6 +35,6 @@ OR
 
 
 <div align="center"><img width="192px" height="192px" 
-src="https://hiennguyen92.github.io/assets/images/qrcode.jpg"/></div>
+src="/assets/images/qrcode.png"/></div>
 
 [1]: http://doc.qt.io/qtcreator
