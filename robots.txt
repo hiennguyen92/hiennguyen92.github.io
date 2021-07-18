@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hioennguyen92.github.io/sitemap/sitemap-index.xml
+Host: https://hioennguyen92.github.io
