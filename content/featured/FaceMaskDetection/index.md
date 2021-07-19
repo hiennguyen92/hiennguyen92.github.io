@@ -1,17 +1,14 @@
 ---
 date: '3'
 title: 'Face Mask Detection'
-cover: 'face-mask.png'
-github: 'https://github.com/chandrikadeb7/Face-Mask-Detection'
-external: 'https://www.youtube.com/watch?v=AAkNyZlUae0'
+cover: 'face-mask.jpg'
+github: 'https://github.com/hiennguyen92/face_mask_detection_tflite'
+external: 'https://www.youtube.com/watch?v=2er_XZb_oi4&ab_channel=HienNguyen'
 tech:
-  - OpenCV
-  - TensorFlow
-  - Keras
-  - Python
+  - Flutter
+  - TensorFlow Lite
+  - ML
 showInProjects: true
 ---
 
-Face Mask Detection system to detect face masks in static images as well as in real-time video streams. Own custom dataset was built using Bing Search API and Kaggle.
-
-Inspired by Adrian Rosebrock's [PyImageSearch Blog](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/).
+An app made with flutter and tensorflow lite for face mask detection.

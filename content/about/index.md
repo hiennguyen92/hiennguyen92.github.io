@@ -2,18 +2,19 @@
 title: 'About Me'
 avatar: 'me.jpg'
 skills:
-  - Java Enterprise
-  - Spring MVC & Maven
+  - Dart
+  - Flutter
+  - React Native
+  - Java/Kotlin/Android
+  - Swift/iOS
+  - Firebase
   - Jenkins (CI/CD)
-  - Kafka & Couchbase
-  - JUnit & TestNG
-  - IntelliJ Idea
 ---
 
-Hello! Interestingly, I have been a student of Bio-Maths in my high school and got introduced to programming in my freshman year at [BIT Mesra](https://www.bitmesra.ac.in/). Since then, I started developing Web and ML projects, and completed my Bachelors in Computer Science and Engineering (2016-2020) with [86.3% aggregate](https://drive.google.com/file/d/1G4UBPBP0mvWZLRdkF_EcpmKKGp7_OA8U/view?usp=sharing).
+Hello! I'm Hien Nguyen, a Freelancer based in Ho Chi Minh, VN.
 
-Today, I'm currently working as a scrum developer responsible for several microservices code development and testing in Amdocs Technology Billing and RTB project.
+I've worked with Flutter since its release back in 2017, with prior experiences with native Android development (7+ years) and React Native (4+ years) on many mobile projects from small to medium-size, using many frameworks and 3rd-party libraries. I have enough experience and can work hard to achieve it.
 
-I have also been awarded as Winner in Design Thinking Hackathon and Runners-Up in [Project ICE Fair](https://drive.google.com/file/d/1laynNsd9hIqxL-imT8dkAWqq7ZO4hj1a/view?usp=sharing) by Amdocs.
+Today, I'm currently working as a freelancer at [Upwork](https://www.upwork.com/freelancers/~01e8865aa693b1478a)
 
-Here is a list of the technologies that I work with in Amdocs!
+Here are a few technologies I've been working with recently:

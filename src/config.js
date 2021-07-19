@@ -1,13 +1,13 @@
 module.exports = {
-  siteTitle: 'Hien Nguyen | Mobile App Developer in Java/Android/React Native/Flutter',
+  siteTitle: 'Hien Nguyen | Mobile App Developer',
   siteDescription:
     'Hien Nguyen is a Mobile App Developer in Java | Android | React Native | Flutter',
   siteKeywords:
-    'Hien Nguyen, Hien, Nguyen, software engineer, flutter, android, react native, java, typescript, javascript',
-  siteUrl: 'https://hioennguyen92.github.io/',
+    'Hien Nguyen, Hien, Nguyen, software engineer, flutter, android, react native, java',
+  siteUrl: 'https://hiennguyen92.github.io/',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'G-C4BFBJWXHV',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'J-6Kyh8KOlaoq8YAqi0ZB74FRe3lp2LJivRHfQx7FqY',
   name: 'Hien Nguyen',
   location: 'Ho Chi Minh, Viet Nam',
   email: 'hien@hiennv.com',
