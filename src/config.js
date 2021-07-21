@@ -4,7 +4,7 @@ module.exports = {
     'Hien Nguyen is a Mobile App Developer in Java | Android | React Native | Flutter',
   siteKeywords:
     'Hien Nguyen, Hien, Nguyen, software engineer, flutter, android, react native, java',
-  siteUrl: 'https://hiennguyen92.github.io/',
+  siteUrl: 'https://hiennguyen92.github.io',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'G-C4BFBJWXHV',
   googleVerification: 'J-6Kyh8KOlaoq8YAqi0ZB74FRe3lp2LJivRHfQx7FqY',
@@ -19,14 +19,6 @@ module.exports = {
       url: 'https://github.com/hiennguyen92',
     },
     {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/hiennv/',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/hiennv',
-    },
-    {
       name: 'Instagram',
       url: 'https://www.instagram.com/hien.nvan',
     },
@@ -34,6 +26,14 @@ module.exports = {
       name: 'Twitter',
       url: 'https://twitter.com/hiennvan',
     },
+    {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/in/hiennv',
+    },
+    {
+      name: 'Codepen',
+      url: 'https://codepen.io/hiennv',
+    }
   ],
 
   navLinks: [
@@ -46,7 +46,7 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Projects',
+      name: 'Work',
       url: '/#projects',
     },
     {
@@ -55,15 +55,13 @@ module.exports = {
     },
   ],
 
-  navHeight: 100,
-
   colors: {
     green: '#64ffda',
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },
 
-  srConfig: (delay = 200) => ({
+  srConfig: (delay = 200, viewFactor = 0.25) => ({
     origin: 'bottom',
     distance: '20px',
     duration: 500,
@@ -75,7 +73,7 @@ module.exports = {
     mobile: true,
     reset: false,
     useDelay: 'always',
-    viewFactor: 0.25,
+    viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
 };

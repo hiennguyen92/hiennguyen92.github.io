@@ -2,6 +2,7 @@
 date: '2014-10-01'
 title: 'Mobile Developer'
 company: 'Beesight Soft'
+location: 'Ho Chi Minh, VN'
 range: 'October 2014 - May 2018'
 url: 'http://beesightsoft.com/'
 ---

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { StaticQuery, graphql } from 'gatsby';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
@@ -12,35 +11,6 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
 
-const SkipToContent = styled.a`
-  position: absolute;
-  top: auto;
-  left: -999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: -99;
-  &:focus,
-  &:active {
-    outline: 0;
-    color: ${colors.green};
-    background-color: ${colors.lightNavy};
-    border-radius: ${theme.borderRadius};
-    padding: 18px 23px;
-    font-size: ${fontSizes.sm};
-    font-family: ${fonts.SFMono};
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    transition: ${theme.transition};
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    z-index: 99;
-  }
-`;
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,10 +21,24 @@ const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
+  // Sets target="_blank" rel="noopener noreferrer" on external links
+  const handleExternalLinks = () => {
+    const allLinks = Array.from(document.querySelectorAll('a'));
+    if (allLinks.length > 0) {
+      allLinks.forEach(link => {
+        if (link.host !== window.location.host) {
+          link.setAttribute('rel', 'noopener noreferrer');
+          link.setAttribute('target', '_blank');
+        }
+      });
+    }
+  };
+
   useEffect(() => {
     if (isLoading) {
       return;
     }
+
     if (location.hash) {
       const id = location.hash.substring(1); // location.hash without the '#'
       setTimeout(() => {
@@ -65,7 +49,10 @@ const Layout = ({ children, location }) => {
         }
       }, 0);
     }
+
+    handleExternalLinks();
   }, [isLoading]);
+
 
   return (
     <StaticQuery
@@ -81,27 +68,33 @@ const Layout = ({ children, location }) => {
         }
       `}
       render={({ site }) => (
-        <div id="root">
+        <div>
           <Head metadata={site.siteMetadata} />
 
-          <GlobalStyle />
+          <div id="root">
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
 
-          <SkipToContent href="#content">Skip to Content</SkipToContent>
+              <a className="skip-to-content" href="#content">
+                Skip to Content
+              </a>
 
-          {isLoading && isHome ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
-            <StyledContent>
-              <Nav isHome={isHome} />
-              <Social isHome={isHome} />
-              <Email isHome={isHome} />
+              {isLoading && isHome ? (
+                <Loader finishLoading={() => setIsLoading(false)} />
+              ) : (
+                  <StyledContent>
+                    <Nav isHome={isHome} />
+                    <Social isHome={isHome} />
+                    <Email isHome={isHome} />
 
-              <div id="content">
-                {children}
-                <Footer />
-              </div>
-            </StyledContent>
-          )}
+                    <div id="content">
+                      {children}
+                      <Footer />
+                    </div>
+                  </StyledContent>
+                )}
+            </ThemeProvider>
+          </div>
         </div>
       )}
     />

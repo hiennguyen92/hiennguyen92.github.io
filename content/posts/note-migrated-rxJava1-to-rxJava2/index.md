@@ -7,7 +7,6 @@ slug: '/pensieve/note-migrated-rxJava1-to-rxJava2'
 tags:
   - RxJava1
   - RxJava2
-  - RxAndroid
 ---
 
 In RxJava1

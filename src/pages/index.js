@@ -1,11 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 import styled from 'styled-components';
-import { Main } from '@styles';
+import { graphql } from 'gatsby';
+import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 
-const StyledMainContainer = styled(Main)`
+const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
@@ -88,14 +87,14 @@ export const pageQuery = graphql`
             title
             cover {
               childImageSharp {
-                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
             tech
             github
-            external
+            external,
+            ios,
+            android
           }
           html
         }
@@ -114,7 +113,9 @@ export const pageQuery = graphql`
             title
             tech
             github
-            external
+            external,
+            ios,
+            android
           }
           html
         }
