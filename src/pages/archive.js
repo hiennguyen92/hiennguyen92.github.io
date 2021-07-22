@@ -203,16 +203,6 @@ const ArchivePage = ({ location, data }) => {
 
                       <td className="links">
                         <div>
-                          {external && (
-                            <a href={external} aria-label="External Link">
-                              <Icon name="External" />
-                            </a>
-                          )}
-                          {github && (
-                            <a href={github} aria-label="GitHub Link">
-                              <Icon name="GitHub" />
-                            </a>
-                          )}
                           {ios && (
                             <a href={ios} aria-label="Apple App Store Link">
                               <Icon name="AppStore" />
@@ -221,6 +211,16 @@ const ArchivePage = ({ location, data }) => {
                           {android && (
                             <a href={android} aria-label="Google Play Store Link">
                               <Icon name="PlayStore" />
+                            </a>
+                          )}
+                          {external && (
+                            <a href={external} aria-label="External Link">
+                              <Icon name="External" />
+                            </a>
+                          )}
+                          {github && (
+                            <a href={github} aria-label="GitHub Link">
+                              <Icon name="GitHub" />
                             </a>
                           )}
                         </div>

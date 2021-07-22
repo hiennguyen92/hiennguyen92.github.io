@@ -14,4 +14,4 @@ company: ''
 showInProjects: true
 ---
 
-The React Native template, libraries should use for an initial project 
+This project is a React Native(Typescript) template and libraries should use for kickstart a mobile application.

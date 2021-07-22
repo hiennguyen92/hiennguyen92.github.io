@@ -10,7 +10,7 @@ tech:
   - Struts2
   - Spring Framework
 company: ''
-showInProjects: true
+showInProjects: false
 ---
 
 This project was developed as clone of [#Bestbuy](https://www.bestbuy.com) website

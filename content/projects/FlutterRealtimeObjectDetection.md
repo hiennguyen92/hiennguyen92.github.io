@@ -16,5 +16,3 @@ showInProjects: true
 ---
 
 Realtime Object Detection App In Flutter With TensorFlow Lite.
-Realtime Object Detection App In Flutter With TensorFlow Lite.
-Realtime Object Detection App In Flutter With TensorFlow Lite.

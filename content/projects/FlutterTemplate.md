@@ -15,7 +15,4 @@ company: ''
 showInProjects: true
 ---
 
-The Flutter template, libraries should use for an initial project 
-
-The Flutter template, libraries should use for an initial project 
-The Flutter template, libraries should use for an initial project 
+This project is a Flutter template and libraries should use for kickstart a mobile application.
