@@ -19,20 +19,16 @@ module.exports = {
       url: 'https://github.com/hiennguyen92',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/hien.nvan',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/hiennvan',
-    },
-    {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/hiennv',
     },
     {
       name: 'Codepen',
       url: 'https://codepen.io/hiennv',
+    },
+    {
+      name: 'Medium',
+      url: 'https://medium.com/@hiennv',
     }
   ],
 

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
+import LightBox from "../../components/lightbox"
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsSection = styled.section`
@@ -171,6 +172,8 @@ const Projects = ({ data }) => {
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [isShowLightBox, setShowLightBox] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -187,9 +190,30 @@ const Projects = ({ data }) => {
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
+
+
+  function setActiveImage({ image, title, description }) {
+    setShowLightBox(true)
+    setSelectedImage({ image, title, description })
+  }
+
+  function handleClose() {
+    setShowLightBox(false)
+    setSelectedImage(null)
+  }
+
+  function handlePrevRequest() {
+
+  }
+
+  function handleNextRequest() {
+
+  }
+
+
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, ios, android, external, title, tech } = frontmatter;
+    const { github, ios, android, external, image, title, tech } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -199,6 +223,11 @@ const Projects = ({ data }) => {
               <Icon name="Folder" />
             </div>
             <div className="project-links">
+              {image && (
+                <a onClick={() => setActiveImage({ image, title, description: html })} aria-label="Image Link">
+                  <Icon name="Thumbnail" />
+                </a>
+              )}
               {ios && (
                 <a href={ios} aria-label="Apple App Store Link" target="_blank" rel="noreferrer">
                   <Icon name="AppStore" />
@@ -287,6 +316,17 @@ const Projects = ({ data }) => {
             </TransitionGroup>
           )}
       </ul>
+
+      {isShowLightBox && selectedImage !== null && (
+        <LightBox
+          image={selectedImage['image']}
+          imageTitle={selectedImage['title']}
+          imageCaption={<div dangerouslySetInnerHTML={{ __html: selectedImage['description'] }} />}
+          handleClose={handleClose}
+          handleNextRequest={handleNextRequest}
+          handlePrevRequest={handlePrevRequest}
+        />
+      )}
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}

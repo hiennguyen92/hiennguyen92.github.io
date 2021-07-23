@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -7,6 +7,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
+import LightBox from "../components/lightbox"
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledTableContainer = styled.div`
@@ -135,6 +136,9 @@ const ArchivePage = ({ location, data }) => {
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [isShowLightBox, setShowLightBox] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null)
+
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -145,6 +149,25 @@ const ArchivePage = ({ location, data }) => {
     sr.reveal(revealTable.current, srConfig(200, 0));
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
   }, []);
+
+  function setActiveImage({ image, title, description }) {
+    setShowLightBox(true)
+    setSelectedImage({ image, title, description })
+  }
+
+  function handleClose() {
+    setShowLightBox(false)
+    setSelectedImage(null)
+  }
+
+  function handlePrevRequest() {
+
+  }
+
+  function handleNextRequest() {
+
+  }
+
 
   return (
     <Layout location={location}>
@@ -170,6 +193,7 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
+                  const { frontmatter, html } = node;
                   const {
                     date,
                     github,
@@ -179,7 +203,8 @@ const ArchivePage = ({ location, data }) => {
                     title,
                     tech,
                     company,
-                  } = node.frontmatter;
+                    image
+                  } = frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -203,6 +228,11 @@ const ArchivePage = ({ location, data }) => {
 
                       <td className="links">
                         <div>
+                          {image && (
+                            <a onClick={() => setActiveImage({ image, title, description: html })} aria-label="Image Link">
+                              <Icon name="Thumbnail" />
+                            </a>
+                          )}
                           {ios && (
                             <a href={ios} aria-label="Apple App Store Link">
                               <Icon name="AppStore" />
@@ -230,6 +260,16 @@ const ArchivePage = ({ location, data }) => {
                 })}
             </tbody>
           </table>
+          {isShowLightBox && selectedImage !== null && (
+            <LightBox
+              image={selectedImage['image']}
+              imageTitle={selectedImage['title']}
+              imageCaption={<div dangerouslySetInnerHTML={{ __html: selectedImage['description'] }} />}
+              handleClose={handleClose}
+              handleNextRequest={handleNextRequest}
+              handlePrevRequest={handlePrevRequest}
+            />
+          )}
         </StyledTableContainer>
       </main>
     </Layout>
@@ -258,7 +298,12 @@ export const pageQuery = graphql`
             external
             ios
             android
-            company
+            company,
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+              }
+            }
           }
           html
         }

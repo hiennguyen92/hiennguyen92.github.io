@@ -1,0 +1,28 @@
+diff --git a/node_modules/react-image-lightbox/style.css b/node_modules/react-image-lightbox/style.css
+index 9c4dfa3..d19634c 100644
+--- a/node_modules/react-image-lightbox/style.css
++++ b/node_modules/react-image-lightbox/style.css
+@@ -78,6 +78,7 @@
+ 
+ .ril__navButtonPrev {
+   left: 0;
++  display: none;
+   background: rgba(0, 0, 0, 0.2)
+     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjM0Ij48cGF0aCBkPSJtIDE5LDMgLTIsLTIgLTE2LDE2IDE2LDE2IDEsLTEgLTE1LC0xNSAxNSwtMTUgeiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==')
+     no-repeat center;
+@@ -85,6 +86,7 @@
+ 
+ .ril__navButtonNext {
+   right: 0;
++  display: none;
+   background: rgba(0, 0, 0, 0.2)
+     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjM0Ij48cGF0aCBkPSJtIDEsMyAyLC0yIDE2LDE2IC0xNiwxNiAtMSwtMSAxNSwtMTUgLTE1LC0xNSB6IiBmaWxsPSIjRkZGIi8+PC9zdmc+')
+     no-repeat center;
+@@ -119,6 +121,7 @@
+ .ril__captionContent {
+   padding: 10px 20px;
+   color: #fff;
++  margin: auto;
+ }
+ 
+ .ril__toolbar {

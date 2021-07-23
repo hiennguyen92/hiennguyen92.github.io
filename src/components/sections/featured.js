@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
+import LightBox from "../lightbox"
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsGrid = styled.ul`
@@ -297,6 +298,8 @@ const Featured = ({ data }) => {
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [isShowLightBox, setShowLightBox] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -306,6 +309,25 @@ const Featured = ({ data }) => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
+
+
+  function setActiveImage({ image, title, description }) {
+    setShowLightBox(true)
+    setSelectedImage({ image, title, description })
+  }
+
+  function handleClose() {
+    setShowLightBox(false)
+    setSelectedImage(null)
+  }
+
+  function handlePrevRequest() {
+
+  }
+
+  function handleNextRequest() {
+
+  }
 
   return (
     <section id="projects">
@@ -317,9 +339,7 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, android, ios, tech, github, cover } = frontmatter;
-            const image = getImage(cover);
-
+            const { external, title, android, ios, tech, github, cover, image } = frontmatter;
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
@@ -344,6 +364,11 @@ const Featured = ({ data }) => {
                     )}
 
                     <div className="project-links">
+                      {image && (
+                        <a onClick={() => setActiveImage({ image, title, description: html })} aria-label="Image Link">
+                          <Icon name="Thumbnail" />
+                        </a>
+                      )}
                       {ios && (
                         <a href={ios} aria-label="Apple App Store Link" target="_blank" rel="noreferrer">
                           <Icon name="AppStore" />
@@ -370,13 +395,23 @@ const Featured = ({ data }) => {
 
                 <div className="project-image">
                   <a href={external ? external : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
+                    <GatsbyImage image={getImage(cover)} alt={title} className="img" />
                   </a>
                 </div>
               </StyledProject>
             );
           })}
       </StyledProjectsGrid>
+      {isShowLightBox && selectedImage !== null && (
+        <LightBox
+          image={selectedImage['image']}
+          imageTitle={selectedImage['title']}
+          imageCaption={<div dangerouslySetInnerHTML={{ __html: selectedImage['description'] }} />}
+          handleClose={handleClose}
+          handleNextRequest={handleNextRequest}
+          handlePrevRequest={handlePrevRequest}
+        />
+      )}
     </section>
   );
 };

@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'HienNguyen',
-        short_name: 'HienNguyen',
+        name: 'Hien Nguyen',
+        short_name: 'Hien Nguyen',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,

@@ -21,7 +21,8 @@
     "clean": "gatsby clean",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "postinstall": "patch-package"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
@@ -52,11 +53,13 @@
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "lodash": "^4.17.19",
+    "patch-package": "^6.4.7",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-image-lightbox": "^5.1.4",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
     "smooth-scroll": "^16.1.0",

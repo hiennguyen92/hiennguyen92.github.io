@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :focus {
-    outline: 2px dashed var(--green);
+    outline: 0px dashed var(--green);
     outline-offset: 3px;
   }
 
@@ -209,7 +209,7 @@ const GlobalStyle = createGlobalStyle`
   img,
   svg,
   .gatsby-image-wrapper {
-    width: 100%;
+    max-width: none !important;
     max-width: 100%;
     vertical-align: middle;
   }

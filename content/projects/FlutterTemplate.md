@@ -1,6 +1,7 @@
 ---
 date: '2021-07-25'
 title: 'Flutter Template'
+image: 'images/testing.png'
 github: 'https://github.com/hiennguyen92/flutter_hiennv'
 external: ''
 ios: ''
