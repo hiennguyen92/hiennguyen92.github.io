@@ -59,16 +59,16 @@ const Hero = ({ data }) => {
   }, []);
 
   const { frontmatter, html } = data[0].node;
-
-  const one = <h1>{frontmatter.title}</h1>;
-  const two = <h2 className="big-heading">{frontmatter.name}.</h2>;
-  const three = <h3 className="big-heading">{frontmatter.subtitle}</h3>;
+  const { title, name, subtitle, buttonText, hireLink } = frontmatter;
+  const one = <h1>{title}</h1>;
+  const two = <h2 className="big-heading">{name}.</h2>;
+  const three = <h3 className="big-heading">{subtitle}</h3>;
   const four = (
     <div dangerouslySetInnerHTML={{ __html: html }}></div>
   );
   const five = (
-    <a href={`https://www.upwork.com/freelancers/~01e8865aa693b1478a`} target="_blank" className="email-link">
-      {frontmatter.buttonText}
+    <a href={hireLink} target="_blank" className="email-link">
+      {buttonText}
     </a>
   );
 

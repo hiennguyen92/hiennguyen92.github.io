@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -128,6 +128,9 @@ const About = ({ data }) => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
+  let image = getImage(avatar)
+  console.log('image', image)
+
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">{title}</h2>
@@ -143,12 +146,9 @@ const About = ({ data }) => {
 
         <StyledPic>
           <div className="wrapper">
-            <StaticImage
+            <GatsbyImage
               className="img"
-              src={`../../../content/about/me.jpg`}
-              width={500}
-              quality={95}
-              formats={['AUTO', 'WEBP', 'AVIF']}
+              image={image}
               alt="Headshot"
             />
           </div>

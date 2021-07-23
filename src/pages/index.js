@@ -38,6 +38,7 @@ export const pageQuery = graphql`
             name
             subtitle
             buttonText
+            hireLink
           }
           html
         }
@@ -50,9 +51,7 @@ export const pageQuery = graphql`
             title
             avatar {
               childImageSharp {
-                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
             skills

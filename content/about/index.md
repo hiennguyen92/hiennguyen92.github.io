@@ -6,8 +6,11 @@ skills:
   - Flutter
   - React Native
   - Java/Kotlin/Android
+  - Android NDK
   - Swift/iOS
-  - Firebase
+  - React.JS
+  - GraphQL/REST
+  - Docker
   - Jenkins (CI/CD)
 ---
 
