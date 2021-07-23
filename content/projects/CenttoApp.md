@@ -1,6 +1,7 @@
 ---
 date: '2018-02-01'
 title: 'Centto'
+image: 'images/CentTo.jpg'
 github: ''
 external: 'https://www.youtube.com/watch?v=1wGhwGnz3Fc&ab_channel=HienNguyen'
 ios: ''

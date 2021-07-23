@@ -1,6 +1,7 @@
 ---
 date: '2018-02-01'
 title: 'Axcro'
+image: 'images/Axcro.jpg'
 github: ''
 external: 'http://www.axcro.com'
 ios: ''

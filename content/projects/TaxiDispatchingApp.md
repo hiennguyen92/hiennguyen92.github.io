@@ -1,6 +1,7 @@
 ---
 date: '2015-01-01'
 title: 'Taxi Dispaching'
+image: 'images/TaxiDispatching.jpg'
 github: ''
 external: ''
 ios: ''

@@ -1,6 +1,7 @@
 ---
 date: '2017-01-01'
 title: 'ATOMS'
+image: 'images/Atoms.jpg'
 github: ''
 external: 'http://atoms.sg'
 ios: 'https://apps.apple.com/us/app/atoms-sg/id1186676679?ls=1'

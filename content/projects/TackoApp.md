@@ -1,6 +1,7 @@
 ---
 date: '2018-05-01'
 title: 'Tacko'
+image: 'images/Tacko.jpg'
 github: ''
 external: 'https://tacko.com'
 ios: 'https://apps.apple.com/us/app/tacko/id1276507045'

@@ -1,6 +1,7 @@
 ---
 date: '2017-10-01'
 title: 'Kawan Cicil'
+image: 'images/KawanCicil.jpg'
 github: ''
 external: 'https://kawancicil.co.id'
 ios: ''

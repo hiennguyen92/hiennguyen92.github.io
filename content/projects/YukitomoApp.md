@@ -1,6 +1,7 @@
 ---
 date: '2016-06-01'
 title: 'Yukitomo'
+image: 'images/Yukitomo.jpg'
 github: ''
 external: ''
 ios: ''

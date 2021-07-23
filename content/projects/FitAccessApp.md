@@ -1,6 +1,7 @@
 ---
 date: '2017-03-01'
 title: 'FitAccess'
+image: 'images/FitAccess.jpg'
 github: ''
 external: ''
 ios: ''

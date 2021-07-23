@@ -1,6 +1,7 @@
 ---
 date: '2018-01-01'
 title: 'FeedMe'
+image: 'images/FeedMe.jpg'
 github: ''
 external: ''
 ios: ''

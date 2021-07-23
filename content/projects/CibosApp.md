@@ -1,6 +1,7 @@
 ---
 date: '2017-08-01'
 title: 'Cibos'
+image: 'images/Cibos.jpg'
 github: ''
 external: 'http://www.getcibos.com'
 ios: ''

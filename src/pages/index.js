@@ -96,7 +96,7 @@ export const pageQuery = graphql`
             android,
             image {
               childImageSharp {
-                gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
           }
@@ -122,7 +122,7 @@ export const pageQuery = graphql`
             android,
             image {
               childImageSharp {
-                gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
           }
