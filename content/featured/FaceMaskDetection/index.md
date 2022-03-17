@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '3'
 title: 'Face Mask Detection'
 cover: 'face-mask.jpg'
 github: 'https://github.com/hiennguyen92/face_mask_detection_tflite'
